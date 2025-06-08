@@ -14,7 +14,7 @@ function Navigation() {
 
   return (
     <div className="py-4">
-      <div className="flex justify-between ">
+      <div className="flex justify-between">
         <div className="flex items-center">
           <Link to="/">
             <img className="w-[100px]" src={logo} alt=""/>
@@ -37,17 +37,20 @@ function Navigation() {
       </div>
       {/*hidden for mobile*/}
       { isRightNavVisible &&
-        <div className="bg-white absolute top-0 right-0 w-[90%] h-full border border-gray-200">
-          <div className="list-none gap-4">
+        <div  onClick={togglRightNav}
+          className="w-full bg-black/70  absolute h-full top-0 right-0">
+          <div className="bg-white  top-0 right-0 w-[70%] border border-gray-200 h-full absolute">
+            <div className="list-none gap-4">
 
-            <button  
-              onClick={togglRightNav}
-              className="py-2 cursor-pointer bg-gray-100 w-full px-4 flex gap-4"><span>❮</span><span className="pt-0.5">Back</span></button>
+              <button  
+                onClick={togglRightNav}
+                className="py-2 cursor-pointer bg-gray-100 w-full px-4 flex gap-4"><span>❮</span><span className="pt-0.5">Back</span></button>
 
-            <Link onClick={togglRightNav} className="py-2 px-4 block" to="/">Home</Link> 
-            <Link onClick={togglRightNav} className="py-2 px-4 block" to="/collection">Collection</Link> 
-            <Link onClick={togglRightNav} className="py-2 px-4 block" to="/about">About</Link> 
-            <Link onClick={togglRightNav} className="py-2 px-4 block" to="/contact">Contact</Link> 
+              <Link onClick={togglRightNav} className="py-2 px-6 block" to="/">Home</Link> 
+              <Link onClick={togglRightNav} className="py-2 px-6 block" to="/collection">Collection</Link> 
+              <Link onClick={togglRightNav} className="py-2 px-6 block" to="/about">About</Link> 
+              <Link onClick={togglRightNav} className="py-2 px-6 block" to="/contact">Contact</Link> 
+            </div>
           </div>
         </div>
       }
